@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+      
+    <head>
+        <style>
+            body {background-image: url("background.jpg")}
+        </style>
+        <title>Character Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       
+        <div align="center" style="color:white"> 
+            <h1> Character Generator </h1>
+            <br></br>
+                <p> Character Name : <input type="text" name="name"> </p>
+                <button onclick="Reroll()">Re-roll All</button>
+                <div align="left" style="margin-left:5cm;">
+            <p id="alignment"></p>
+            <p></p>
+
+    <script> //The script that rerolls all the attributes
+        function Reroll() {
+            document.getElementById("alignment").innerHTML="Alignment: " +
+            Alignment[Math.floor(Math.random() * Alignment.length)];
+            document.getElementById("goals").innerHTML = "Goal : " +
+            Goals[Math.floor(Math.random()* Goals.length)];
+            document.getElementById("ptrait").innerHTML = "Positive Trait: " +
+            Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+            if (P2 === true) {
+            document.getElementById("ptrait2").innerHTML = " " +
+            Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+            }
+             if (P3 === true) {
+            document.getElementById("ptrait3").innerHTML = " " +
+            Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+            }
+            document.getElementById("ntrait").innerHTML = "Negative Trait: " +
+        Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];
+            if (N2 === true) {
+            document.getElementById("ntrait2").innerHTML = " " +
+        Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];    
+            }
+            if (N3 === true) {
+            document.getElementById("ntrait3").innerHTML = " " +
+        Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];
+            }
+            document.getElementById("fighting").innerHTML = "Preferred Fighting \n\
+    \n\Style: "+Fighting_Pref[Math.floor(Math.random() * Fighting_Pref.length)];
+            }
+    </script>
+<script> //Alignment variable holder and chooses random on load
+var Alignment = ["Good", "Neutral", "Chaotic"];
+var AlignmentVal = Alignment[Math.floor(Math.random() * Alignment.length)];
+document.getElementById("alignment").innerHTML = "Alignment: " + 
+        AlignmentVal;
+</script>      
+<br></br>
+<p id="goals"></p>
+<script> //Goals variable holder and chooses random on load
+var Goals = ["Money", "Power", "Relationships", "Adventure", "Knowledge"];
+document.getElementById("goals").innerHTML = "Goal: " + 
+        Goals[Math.floor(Math.random() * Goals.length)];    
+</script>
+<br></br>
+<p id="ptrait"></p>
+<p id="ptrait2">
+<script> //Postive trait variable holder and chooses random on load
+
+var Positive_Traits = ["Clever", "Athletic", "Balanced", "Charming", 
+    "Ambitious", "Disciplline", "Generous", "Honorable", "Hard-working",
+    "Perceptive", "Rational", "Romantic", "Selfless", "Witty", "Competitve"];
+document.getElementById("ptrait").innerHTML = "Positive Trait: " +
+        Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+</script>
+<script> //Adds another Positive Trait
+    function P2() {
+        P2 = true;
+        document.getElementById("ptrait2").innerHTML = " " + 
+            Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+    
+    }
+</script>
+<button onclick="P2()">Another Attribute</button></p>
+<p id="ptrait3">
+<script> //Adds another Positive Trait
+    function P3() {
+        P3 = true;
+        document.getElementById("ptrait3").innerHTML = " " + 
+            Positive_Traits[Math.floor(Math.random() * Positive_Traits.length)];
+    
+    }
+</script>
+<button onclick="P3()">Another Attribute</button></p>
+<br></br>
+<p id="ntrait"></p>
+<script> //negative trait variable holder and chooses random on load
+var Negative_Traits = ["Absentminded", "Deceitful", "Dominating", "Proud",
+"Brutal", "Careless", "Cold", "Cowardly", "Egocentric", "Lazy", 
+"Obsessive", "Paranoid", "Unstable", "Weak-willed"];
+document.getElementById("ntrait").innerHTML = "Negative Trait: " +
+        Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];
+</script>
+<p id="ntrait2">
+    <script> //Adds another Negative Trait
+    function N2() {
+        N2 = true;
+        document.getElementById("ntrait2").innerHTML = " " + 
+            Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];
+    
+    }
+</script>
+<button onclick="N2()">Another Attribute</button></p>
+<p id="ntrait3">
+    <script> //Adds another Negative Trait
+    function N3() {
+        N3 = true;
+        document.getElementById("ntrait3").innerHTML = " " + 
+            Negative_Traits[Math.floor(Math.random() * Negative_Traits.length)];
+    
+    }
+</script>
+<button onclick="N3()">Another Attribute</button></p>
+<br></br>
+<p id="fighting"></p>
+<script> //Fighting style variable holder and chooses random on load
+var Fighting_Pref = ["Close-quarters", "Ranged", "Mental (either Magic/non-\n\
+fighter)"];
+document.getElementById("fighting").innerHTML = "Preferred Fighting Style: " +
+        Fighting_Pref[Math.floor(Math.random() * Fighting_Pref.length)];
+var WTD = ["Hearhtstone- Get Legend", "New Game\n\
+on Steam", "The Division- Daily Stuff", "Fallout 4- Finish Main game", "DB: \n\
+Xenoverse", "Shadow of Mordor- Finish Game", "Bloodborne- Try to get in to it",
+        "Ratchet and Clank- Finish Game", "Destiny- PVP/Light Grind"];
+document.getElementById("fighting").innerHTML = "What Game: " +
+        WTD[Math.floor(Math.random() * WTD.length)];
+</script>
+
+</body>
+</html>
+
